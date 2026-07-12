@@ -1,0 +1,17 @@
+<svg width="1200" height="1400" viewBox="0 0 1200 1400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1400" rx="72" fill="#09090B"/>
+  <rect x="88" y="88" width="1024" height="1224" rx="56" fill="url(#paint0_radial)"/>
+  <path d="M180 920L420 640L600 800L860 500L1020 620" stroke="#22D3EE" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="420" cy="640" r="36" fill="#FFFFFF" fill-opacity="0.9"/>
+  <circle cx="600" cy="800" r="36" fill="#FFFFFF" fill-opacity="0.9"/>
+  <circle cx="860" cy="500" r="36" fill="#FFFFFF" fill-opacity="0.9"/>
+  <rect x="240" y="940" width="720" height="160" rx="32" fill="#0F172A" fill-opacity="0.8" stroke="rgba(255,255,255,0.12)"/>
+  <text x="88" y="1260" fill="white" fill-opacity="0.9" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700">Nephele 3.0</text>
+  <text x="88" y="1328" fill="white" fill-opacity="0.55" font-family="Arial, Helvetica, sans-serif" font-size="32">Hackathon ops • mentors • deployment challenges</text>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 700) rotate(90) scale(580 530)">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#09090B"/>
+    </radialGradient>
+  </defs>
+</svg>

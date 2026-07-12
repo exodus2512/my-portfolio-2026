@@ -1,0 +1,17 @@
+<svg width="1200" height="1400" viewBox="0 0 1200 1400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1400" rx="72" fill="#09090B"/>
+  <rect x="88" y="88" width="1024" height="1224" rx="56" fill="url(#paint0_radial)"/>
+  <circle cx="370" cy="430" r="180" fill="#8B5CF6" fill-opacity="0.28"/>
+  <circle cx="790" cy="510" r="240" fill="#06B6D4" fill-opacity="0.2"/>
+  <rect x="260" y="720" width="680" height="240" rx="40" fill="#111827" fill-opacity="0.7" stroke="rgba(255,255,255,0.12)"/>
+  <path d="M465 818C465 769.399 504.399 730 553 730C594.246 730 629.026 757.179 639.95 794.981C645.611 792.621 651.825 791.333 658.333 791.333C686.544 791.333 709.333 814.122 709.333 842.333C709.333 846.336 708.861 850.229 707.971 853.959H465V818Z" fill="#E0E7FF" fill-opacity="0.82"/>
+  <rect x="520" y="930" width="160" height="36" rx="18" fill="#A78BFA" fill-opacity="0.85"/>
+  <text x="88" y="1260" fill="white" fill-opacity="0.9" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700">AWS Cloud Club</text>
+  <text x="88" y="1328" fill="white" fill-opacity="0.55" font-family="Arial, Helvetica, sans-serif" font-size="32">Community leadership • labs • workshops</text>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 700) rotate(90) scale(580 530)">
+      <stop stop-color="#1F2937"/>
+      <stop offset="1" stop-color="#09090B"/>
+    </radialGradient>
+  </defs>
+</svg>
