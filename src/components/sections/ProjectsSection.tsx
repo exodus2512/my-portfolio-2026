@@ -160,7 +160,7 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
           <FlowDiagram
             nodes={project.architectureNodes}
             variant="full"
-            className="w-full min-w-[600px] lg:min-w-0"
+            className="w-full max-w-full lg:min-w-0"
           />
         </div>
       </div>
@@ -207,7 +207,10 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
                   aria-hidden="true"
                 />
               </div>
-              <span className="text-sm text-secondary leading-relaxed">
+              <span className="text-sm text-secondary leading-relaxed pl-3 border-l-2 border-accent/40 md:border-l-0 md:pl-0">
+                <span className="md:hidden font-semibold text-accent text-xs uppercase tracking-wider block mb-1">
+                  Solution
+                </span>
                 {c.solution}
               </span>
             </div>
@@ -273,7 +276,7 @@ export function ProjectsSection() {
   const lenis = useLenis();
 
   return (
-    <section id="projects" className="relative w-full py-48 md:py-60 max-w-screen-2xl mx-auto px-8 border-t border-border overflow-hidden">
+    <section id="projects" className="relative w-full py-28 sm:py-40 md:py-60 max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 border-t border-border overflow-hidden">
       {/* Ambient Bottom-Right Glow */}
       <div
         className="absolute bottom-10 right-0 w-[600px] h-[600px] pointer-events-none z-0 rounded-full"
@@ -321,7 +324,7 @@ export function ProjectsSection() {
                 </div>
                 {/* Note: Using a serif font-family explicitly to match the screenshot's premium editorial look */}
                 <h3
-                  className="text-[3.5rem] md:text-[6rem] lg:text-[8rem] font-black tracking-tighter text-foreground leading-none"
+                  className="text-4xl sm:text-[3.5rem] md:text-[6rem] lg:text-[8rem] font-black tracking-tighter text-foreground leading-none break-words"
                   style={{ fontFamily: 'Times New Roman, serif' }}
                 >
                   {project.title}
@@ -335,7 +338,7 @@ export function ProjectsSection() {
                   <div className="relative w-full h-full min-h-[460px] sm:min-h-[580px] md:min-h-[700px] lg:min-h-[800px] glass-card rounded-[24px] overflow-hidden flex flex-col font-sans">
 
                     {/* Top Nav Mock */}
-                    <div className="flex items-center justify-between px-8 py-6 border-b border-border bg-background/40 backdrop-blur-md relative z-20">
+                    <div className="flex items-center justify-between px-4 sm:px-8 py-4 sm:py-6 border-b border-border bg-background/40 backdrop-blur-md relative z-20">
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-foreground text-xl tracking-tight">Nephele</span>
                       </div>
@@ -345,13 +348,13 @@ export function ProjectsSection() {
                         <span>Architecture</span>
                         <span className="text-foreground border-b border-foreground pb-1">Initialize</span>
                       </div>
-                      <div className="px-5 py-2 bg-foreground text-background font-bold text-sm">
+                      <div className="px-3 sm:px-5 py-1.5 sm:py-2 bg-foreground text-background font-bold text-xs sm:text-sm shrink-0">
                         Get Started
                       </div>
                     </div>
 
                     {/* Hero Area Mock */}
-                    <div className="relative flex-1 flex flex-col items-center justify-center p-8 text-center pt-20 pb-32">
+                    <div className="relative flex-1 flex flex-col items-center justify-center p-4 sm:p-8 text-center pt-12 sm:pt-20 pb-20 sm:pb-32">
                       {/* Radial Glow */}
                       <div className={cn("absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] blur-[120px] rounded-full opacity-40 mix-blend-screen", project.mockGlow)} />
 
@@ -359,18 +362,18 @@ export function ProjectsSection() {
                         <div className="mb-6 relative">
                           {project.mockIcon}
                         </div>
-                        <h3 className="text-6xl md:text-8xl font-light tracking-tight text-foreground mb-6">
+                        <h3 className="text-4xl sm:text-6xl md:text-8xl font-light tracking-tight text-foreground mb-6">
                           {project.mockTitle}
                         </h3>
-                        <p className="text-xl text-secondary max-w-lg mx-auto mb-10">
+                        <p className="text-base sm:text-xl text-secondary max-w-lg mx-auto mb-10">
                           {project.mockSub}
                         </p>
 
-                        <div className="flex items-center gap-4">
-                          <div className="px-8 py-4 bg-foreground/10 backdrop-blur-md text-foreground font-medium text-sm">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-xs sm:max-w-none">
+                          <div className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-foreground/10 backdrop-blur-md text-foreground font-medium text-xs sm:text-sm text-center">
                             Initialize Interface
                           </div>
-                          <div className="px-8 py-4 border border-border text-secondary font-medium text-sm hover:text-foreground transition-colors">
+                          <div className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 border border-border text-secondary font-medium text-xs sm:text-sm text-center hover:text-foreground transition-colors">
                             View Documentation
                           </div>
                         </div>
@@ -387,7 +390,7 @@ export function ProjectsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mt-12 max-w-6xl mx-auto w-full"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start lg:items-end mt-12 max-w-6xl mx-auto w-full"
               >
                 {/* Left: Text & Tags (8 cols) */}
                 <div className="lg:col-span-8 flex flex-col">

@@ -27,7 +27,7 @@ function AnimatedNumber({ value }: { value: number }) {
 
 export function NowStreakSection() {
   return (
-    <section className="w-full py-32 md:py-48 max-w-6xl mx-auto px-8 border-t border-white/5">
+    <section className="w-full py-24 sm:py-32 md:py-48 max-w-6xl mx-auto px-4 sm:px-6 md:px-8 border-t border-white/5">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -74,10 +74,10 @@ export function NowStreakSection() {
             <span className="uppercase tracking-widest text-sm font-semibold">Streak</span>
           </div>
           <div className="flex items-baseline gap-4">
-            <span className="text-7xl md:text-8xl font-bold font-outfit text-amber-500 tabular-nums">
+            <span className="text-6xl sm:text-7xl md:text-8xl font-bold font-outfit text-amber-500 tabular-nums">
               <AnimatedNumber value={12} />
             </span>
-            <span className="text-2xl text-zinc-400 font-medium">days on LeetCode</span>
+            <span className="text-xl sm:text-2xl text-zinc-400 font-medium">days on LeetCode</span>
           </div>
         </motion.div>
 
@@ -93,9 +93,9 @@ export function NowStreakSection() {
             <Clock size={24} />
             <span className="uppercase tracking-widest text-sm font-semibold">Open To</span>
           </div>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-2 sm:gap-4">
             {["SDE Internships", "Cloud Roles", "Open Source Collaboration"].map((tag) => (
-              <span key={tag} className="px-5 py-2.5 rounded-full border border-white/20 text-white/80 text-lg">
+              <span key={tag} className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/20 text-white/80 text-sm sm:text-lg">
                 {tag}
               </span>
             ))}
