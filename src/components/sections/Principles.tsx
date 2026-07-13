@@ -68,7 +68,7 @@ function PrincipleSlide({ principle, index }: { principle: Principle; index: num
       </span>
 
       {/* Principle title / heading */}
-      <h3 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-tight mb-8 max-w-4xl">
+      <h3 className="text-4xl md:text-[64px] font-bold tracking-tight text-foreground leading-tight mb-8 max-w-4xl">
         {principle.title}
       </h3>
 
@@ -78,7 +78,7 @@ function PrincipleSlide({ principle, index }: { principle: Principle; index: num
       </div>
 
       {/* Description / Aphorism */}
-      <p className="text-lg md:text-xl text-secondary max-w-2xl leading-relaxed mb-0 font-normal">
+      <p className="text-[20px] text-secondary max-w-2xl leading-relaxed mb-0 font-normal">
         {principle.aphorism}
       </p>
     </div>
@@ -173,7 +173,7 @@ function DesktopPrinciples() {
         <h2 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground leading-none">
           How I Build
         </h2>
-        <p className="mt-8 text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed">
+        <p className="mt-8 text-[20px] text-muted max-w-3xl mx-auto leading-relaxed">
           I believe great engineers own outcomes, not just code. From architecture and implementation to deployment and continuous improvement, I build with the expectation that every decision should make the product easier to scale, operate, and maintain over time.
         </p>
       </motion.div>
@@ -256,7 +256,7 @@ function MobilePrinciples() {
         transition={{ duration: 0.8, ease }}
         className="mb-16 text-center"
       >
-        <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#C8A75A] mb-6 block">
+        <span className="text-[12px] font-medium uppercase tracking-[0.3em] text-[#C8A75A] mb-6 block">
           Philosophy
         </span>
         <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground leading-none mb-6">

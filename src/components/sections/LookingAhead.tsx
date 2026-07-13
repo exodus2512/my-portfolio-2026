@@ -40,7 +40,7 @@ export function LookingAheadSection() {
         {/* Eyebrow Label */}
         <motion.span
           variants={itemVariants}
-          className="text-xs font-semibold uppercase tracking-[0.3em] text-[#C8A75A] mb-8 block"
+          className="text-[12px] font-medium uppercase tracking-[0.3em] text-[#C8A75A] mb-8 block"
         >
           CHAPTER 09
         </motion.span>
@@ -56,7 +56,7 @@ export function LookingAheadSection() {
         {/* Body Text */}
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl text-secondary leading-relaxed max-w-2xl font-normal"
+          className="text-[20px] text-secondary leading-relaxed max-w-2xl font-normal"
         >
           I&apos;m drawn to engineering challenges that demand both technical depth and product thinking. Whether it&apos;s designing scalable backend systems, architecting cloud-native platforms, or improving developer experience through automation, I want to build software that creates lasting value—not just ship features.
         </motion.p>

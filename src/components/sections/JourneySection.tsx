@@ -141,7 +141,7 @@ function TimelineItem({
         </h3>
         <p
           className={cn(
-            "text-base md:text-lg leading-relaxed max-w-lg transition-colors duration-300 mb-6",
+            "text-base md:text-[20px] leading-relaxed max-w-lg transition-colors duration-300 mb-6",
             isActive ? "text-secondary" : "text-muted"
           )}
         >
@@ -312,10 +312,10 @@ export function JourneySection() {
         transition={{ duration: 0.8, ease }}
         className="mb-24 md:mb-32 relative z-10"
       >
-        <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#C8A75A] mb-6 block">
+        <span className="text-[12px] font-medium uppercase tracking-[0.3em] text-[#C8A75A] mb-6 block">
           Timeline
         </span>
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[0.9]">
+        <h2 className="text-4xl md:text-[64px] font-bold tracking-tight text-foreground leading-[0.9]">
           Origins
         </h2>
       </motion.div>

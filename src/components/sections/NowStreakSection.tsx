@@ -57,7 +57,7 @@ export function NowStreakSection() {
             <h3 className="text-3xl md:text-4xl font-bold font-outfit text-white mb-2">
               Cloud-native Microservices Platform
             </h3>
-            <p className="text-lg text-zinc-400">AWS ECS + Next.js Frontend Orchestration</p>
+            <p className="text-[20px] text-zinc-400">AWS ECS + Next.js Frontend Orchestration</p>
           </div>
         </motion.div>
 
@@ -95,7 +95,7 @@ export function NowStreakSection() {
           </div>
           <div className="flex flex-wrap gap-2 sm:gap-4">
             {["SDE Internships", "Cloud Roles", "Open Source Collaboration"].map((tag) => (
-              <span key={tag} className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/20 text-white/80 text-sm sm:text-lg">
+              <span key={tag} className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/20 text-white text-sm sm:text-[20px]">
                 {tag}
               </span>
             ))}

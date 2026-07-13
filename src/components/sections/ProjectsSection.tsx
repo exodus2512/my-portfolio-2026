@@ -160,10 +160,10 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
   if (project.problem) {
     sections.push(
       <div key="problem" className="py-16">
-        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 mb-4">
+        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/90 mb-4">
           Problem
         </h5>
-        <p className="text-base text-white/70 leading-relaxed max-w-3xl">
+        <p className="text-base text-white leading-relaxed max-w-3xl">
           {project.problem}
         </p>
       </div>
@@ -172,8 +172,8 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
 
   if (project.architectureNodes && project.architectureNodes.length > 0) {
     sections.push(
-      <div key="architecture" className="py-16 my-4 bg-surface border border-border rounded-2xl px-6 md:px-12">
-        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 mb-6">
+      <div key="architecture" className="py-16 my-4 glass-card rounded-2xl px-6 md:px-12">
+        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/90 mb-6">
           Architecture
         </h5>
         <div className="py-12 flex justify-center items-center overflow-x-auto w-full">
@@ -190,14 +190,14 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
   if (project.decisions && project.decisions.length > 0) {
     sections.push(
       <div key="decisions" className="py-16">
-        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 mb-6">
+        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/90 mb-6">
           Key Engineering Decisions
         </h5>
         <ul className="space-y-4">
           {project.decisions.map((d, i) => (
             <li key={i} className="text-sm leading-relaxed pl-4 border-l border-border">
               <span className="text-[#C8A75A] font-semibold">Why {d.choice}:</span>{" "}
-              <span className="text-white/70">{d.reason}</span>
+              <span className="text-white">{d.reason}</span>
             </li>
           ))}
         </ul>
@@ -208,7 +208,7 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
   if (project.challenges && project.challenges.length > 0) {
     sections.push(
       <div key="challenges" className="py-16">
-        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 mb-8">
+        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/90 mb-8">
           Challenges & Solutions
         </h5>
         <div className="space-y-6">
@@ -227,7 +227,7 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
                   aria-hidden="true"
                 />
               </div>
-              <span className="text-sm text-white/70 leading-relaxed">
+              <span className="text-sm text-white leading-relaxed">
                 {c.solution}
               </span>
             </div>
@@ -240,7 +240,7 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
   if (project.metrics && project.metrics.length > 0) {
     sections.push(
       <div key="metrics" className="py-16">
-        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 mb-6">
+        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/90 mb-6">
           Metrics
         </h5>
         <div className="flex flex-wrap gap-8">
@@ -249,7 +249,7 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
               <span className="text-4xl font-bold text-foreground">
                 {m.value}
               </span>
-              <span className="text-xs text-white/50 mt-1 uppercase tracking-widest">
+              <span className="text-xs text-white/90 mt-1 uppercase tracking-widest">
                 {m.label}
               </span>
             </div>
@@ -262,11 +262,11 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
   if (project.lessons) {
     sections.push(
       <div key="lessons" className="py-16">
-        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 mb-6">
+        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/90 mb-6">
           Lessons Learned
         </h5>
         <div className="border-l-2 border-[#C8A75A]/40 pl-6">
-          <p className="text-lg italic text-white/70 leading-relaxed max-w-3xl">
+          <p className="text-[20px] italic text-white leading-relaxed max-w-3xl">
             {project.lessons}
           </p>
         </div>
@@ -310,10 +310,10 @@ export function ProjectsSection() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="mb-32 text-center max-w-6xl mx-auto relative z-10"
       >
-        <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#C8A75A] mb-6 block">
+        <span className="text-[12px] font-medium uppercase tracking-[0.3em] text-[#C8A75A] mb-6 block">
           Selected Work
         </span>
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground">
+        <h2 className="text-4xl md:text-[64px] font-bold tracking-tight text-foreground">
           The Work
         </h2>
       </motion.div>
@@ -334,7 +334,7 @@ export function ProjectsSection() {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="mb-8 max-w-6xl mx-auto w-full"
               >
-                <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#9CA3AF] mb-6">
+                <div className="flex items-center gap-4 text-[12px] font-medium uppercase tracking-[0.3em] text-[#9CA3AF] mb-6">
                   <span>0{idx + 1}</span>
                   <span className="w-4 h-[1px] bg-[#9CA3AF]" />
                   <span>{project.category}</span>
@@ -376,7 +376,7 @@ export function ProjectsSection() {
                   <h4 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                     {project.subheadline}
                   </h4>
-                  <p className="text-lg text-white/70 leading-relaxed mb-8 max-w-2xl">
+                  <p className="text-[20px] text-white leading-relaxed mb-8 max-w-2xl">
                     {project.description}
                   </p>
 
@@ -384,7 +384,7 @@ export function ProjectsSection() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest bg-surface border border-border text-white/70"
+                        className="px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest glass-card text-white"
                       >
                         {tag}
                       </span>

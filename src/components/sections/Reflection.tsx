@@ -46,7 +46,7 @@ export function ReflectionSection() {
         {/* Eyebrow Label */}
         <motion.span
           variants={itemVariants}
-          className="text-xs font-semibold uppercase tracking-[0.3em] text-[#C8A75A] font-mono mb-8 block"
+          className="text-[12px] font-medium uppercase tracking-[0.3em] text-[#C8A75A] font-mono mb-8 block"
         >
           CHAPTER 08
         </motion.span>
@@ -62,7 +62,7 @@ export function ReflectionSection() {
         {/* Body Text */}
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl text-secondary leading-relaxed max-w-2xl mb-12 font-normal"
+          className="text-[20px] text-secondary leading-relaxed max-w-2xl mb-12 font-normal"
         >
           Stop trying to learn everything.<br />
           Pick the hard problem and stay<br />
@@ -72,7 +72,7 @@ export function ReflectionSection() {
         {/* Closing Line */}
         <motion.span
           variants={itemVariants}
-          className="text-base md:text-lg text-[#C8A75A] font-medium max-w-xl block"
+          className="text-base md:text-[20px] text-[#C8A75A] font-medium max-w-xl block"
         >
           That&apos;s where the actual skill lives.
         </motion.span>

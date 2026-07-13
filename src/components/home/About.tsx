@@ -35,7 +35,7 @@ export function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="text-xs uppercase tracking-[0.3em] text-white/40 mb-6 block"
+              className="text-xs uppercase tracking-[0.3em] text-white mb-6 block"
             >
               The Story
             </motion.span>
@@ -46,14 +46,14 @@ export function About() {
               viewport={{ once: true }}
               className="text-5xl md:text-6xl font-bold font-outfit tracking-tighter mb-8"
             >
-              Merging <span className="text-white/40 italic">Aesthetics</span> with <span className="text-white/40 italic">Logic</span>
+              Merging <span className="text-white italic">Aesthetics</span> with <span className="text-white italic">Logic</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              className="text-xl text-white/60 leading-relaxed max-w-xl"
+              className="text-xl text-white/90 leading-relaxed max-w-xl"
             >
               I am a designer-engineer hybrid who believes that great digital products are born from the perfect balance of visual excellence and technical precision. My goal is to build interfaces that aren't just beautiful, but are also intuitive, accessible, and performant.
             </motion.p>
@@ -71,12 +71,12 @@ export function About() {
                  className="relative pl-16 mb-12 last:mb-0"
                >
                  <div className="absolute left-[24px] top-1 w-4 h-4 rounded-full bg-white border-4 border-black" />
-                 <span className="text-sm font-medium text-white/40 mb-1 block">
+                 <span className="text-sm font-medium text-white mb-1 block">
                    {exp.year}
                  </span>
                  <h3 className="text-2xl font-bold font-outfit mb-2">{exp.company}</h3>
-                 <p className="text-lg font-medium text-white/80 mb-2">{exp.role}</p>
-                 <p className="text-white/50 leading-relaxed">{exp.description}</p>
+                 <p className="text-[20px] font-medium text-white mb-2">{exp.role}</p>
+                 <p className="text-white/90 leading-relaxed">{exp.description}</p>
                </motion.div>
              ))}
           </div>

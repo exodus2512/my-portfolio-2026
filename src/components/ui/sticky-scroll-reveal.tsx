@@ -62,7 +62,7 @@ export function StickyScrollReveal({ content, className }: StickyScrollRevealPro
             <h3
               className={cn(
                 "text-xl font-bold font-outfit mb-3 transition-colors duration-300",
-                activeCard === index ? "text-white" : "text-white/30"
+                activeCard === index ? "text-white" : "text-white"
               )}
             >
               {item.title}
@@ -70,7 +70,7 @@ export function StickyScrollReveal({ content, className }: StickyScrollRevealPro
             <p
               className={cn(
                 "text-sm leading-relaxed transition-colors duration-300",
-                activeCard === index ? "text-white/70" : "text-white/20"
+                activeCard === index ? "text-white" : "text-white/90"
               )}
             >
               {item.description}
@@ -90,7 +90,7 @@ export function StickyScrollReveal({ content, className }: StickyScrollRevealPro
           >
             {content[activeCard]?.content ?? (
               <div className="flex h-full items-center justify-center">
-                <span className="text-4xl font-bold font-outfit text-white/20">
+                <span className="text-4xl font-bold font-outfit text-white/90">
                   {activeCard + 1 < 10 ? `0${activeCard + 1}` : activeCard + 1}
                 </span>
               </div>

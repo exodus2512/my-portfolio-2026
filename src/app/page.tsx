@@ -69,9 +69,9 @@ export default function Home() {
         <ResumeContactSection />
       </div>
 
-      <footer className="py-12 border-t border-white/5 bg-black text-center text-white/40 text-sm">
+      <footer className="py-12 border-t border-white/5 bg-black text-center text-white text-sm">
         <p>&copy; {new Date().getFullYear()} Joshua Moses. All rights reserved.</p>
-        <p className="mt-2 text-white/20 text-xs">
+        <p className="mt-2 text-white/90 text-xs">
           Built with Next.js · Framer Motion · Tailwind CSS · Deployed on Vercel
         </p>
       </footer>

@@ -41,7 +41,7 @@ export function Skills() {
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-xs uppercase tracking-[0.3em] text-white/40 mb-4 block"
+            className="text-xs uppercase tracking-[0.3em] text-white mb-4 block"
           >
             Capabilities
           </motion.span>
@@ -71,9 +71,9 @@ export function Skills() {
                 {category.skills.map((skill, sIdx) => (
                   <div key={sIdx} className="flex items-center gap-4 group">
                     <div className="p-3 rounded-xl bg-white/5 group-hover:bg-white/10 group-hover:scale-110 transition-all duration-300">
-                      <skill.icon size={24} className="text-white/60 group-hover:text-white" />
+                      <skill.icon size={24} className="text-white/90 group-hover:text-white" />
                     </div>
-                    <span className="text-lg font-medium text-white/70 group-hover:text-white transition-colors">
+                    <span className="text-[20px] font-medium text-white group-hover:text-white transition-colors">
                       {skill.name}
                     </span>
                   </div>

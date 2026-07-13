@@ -124,7 +124,7 @@ export function ProfileSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8, ease, delay: 0.3 }}
-            className="text-lg md:text-xl text-secondary leading-relaxed font-normal max-w-2xl mb-8"
+            className="text-[20px] text-secondary leading-relaxed font-normal max-w-2xl mb-8"
           >
             As a Backend Engineer and Design Architect, I build the invisible foundations that power modern products. From system architecture and cloud infrastructure to backend services and developer platforms, I design with longevity in mind. Every decision is guided by ownership, intentional trade-offs, and the belief that great architecture should help products evolve, not hold them back.
           </motion.p>
@@ -135,7 +135,7 @@ export function ProfileSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8, ease, delay: 0.45 }}
-            className="text-lg md:text-xl text-muted leading-relaxed font-normal max-w-2xl"
+            className="text-[20px] text-muted leading-relaxed font-normal max-w-2xl"
           >
             I believe great engineering isn&apos;t measured by the amount of code written, but by the quality of the foundations that empower teams to build, iterate, and scale with confidence.
           </motion.p>

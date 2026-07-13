@@ -6,7 +6,7 @@ import { FloatingDock } from "@/components/ui/floating-dock";
 import {
   IconBrandGithub,
   IconBrandLinkedin,
-  IconBrandX,
+  IconBrandInstagram,
   IconMail,
   IconFileText,
   IconCode,
@@ -16,22 +16,22 @@ const socialLinks = [
   {
     title: "GitHub",
     icon: <IconBrandGithub className="h-full w-full text-foreground" />,
-    href: "https://github.com/joshuamoses",
+    href: "https://github.com/exodus2512",
   },
   {
     title: "LinkedIn",
     icon: <IconBrandLinkedin className="h-full w-full text-[#C8A75A]" />,
-    href: "https://linkedin.com/in/joshuamoses",
+    href: "https://www.linkedin.com/in/joshuamoses7/",
   },
   {
-    title: "X / Twitter",
-    icon: <IconBrandX className="h-full w-full text-foreground" />,
-    href: "https://x.com/joshuamoses",
+    title: "Instagram",
+    icon: <IconBrandInstagram className="h-full w-full text-foreground" />,
+    href: "https://www.instagram.com/_.xo.exodus._/",
   },
   {
     title: "LeetCode",
     icon: <IconCode className="h-full w-full text-[#C8A75A]" />,
-    href: "https://leetcode.com/joshuamoses",
+    href: "https://leetcode.com/u/joshua_moses/",
   },
   {
     title: "Gmail",
@@ -41,7 +41,7 @@ const socialLinks = [
   {
     title: "Resume",
     icon: <IconFileText className="h-full w-full text-[#C8A75A]" />,
-    href: "#",
+    href: "/socials/temp_resumeUPDATED.pdf",
   },
 ];
 
@@ -49,7 +49,7 @@ export function ResumeContactSection() {
   return (
     <section 
       id="contact" 
-      className="relative w-full py-60 md:py-80 max-w-6xl mx-auto px-8 border-t border-border flex flex-col items-center justify-center overflow-hidden"
+      className="relative w-full min-h-[100dvh] pt-24 pb-24 max-w-6xl mx-auto px-8 border-t border-border flex flex-col items-center justify-center overflow-hidden"
     >
       {/* Ambient Centered Champagne Glow */}
       <div
@@ -101,16 +101,6 @@ export function ResumeContactSection() {
           <FloatingDock items={socialLinks} />
         </motion.div>
 
-        {/* Copyright */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.8 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="text-xs font-semibold uppercase tracking-[0.3em] text-[#9CA3AF] mt-8 font-mono"
-        >
-          © 2026 joshuamoses
-        </motion.div>
       </div>
     </section>
   );

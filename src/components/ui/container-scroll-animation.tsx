@@ -82,7 +82,7 @@ export function ContainerScroll({ children, titleComponent, className }: Contain
             <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
             <span className="w-3 h-3 rounded-full bg-green-500/80" />
             <div className="ml-4 flex-1 h-6 rounded-full bg-white/5 border border-white/10 flex items-center px-3">
-              <span className="text-[10px] text-white/30 truncate">https://project.vercel.app</span>
+              <span className="text-[10px] text-white truncate">https://project.vercel.app</span>
             </div>
           </div>
           {/* Content */}

@@ -36,7 +36,7 @@ export function Projects() {
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              className="text-xs uppercase tracking-[0.3em] text-white/40 mb-4 block"
+              className="text-xs uppercase tracking-[0.3em] text-white mb-4 block"
             >
               Selected Work
             </motion.span>
@@ -48,7 +48,7 @@ export function Projects() {
               Case Studies
             </motion.h2>
           </div>
-          <button className="text-white/60 hover:text-white transition-colors flex items-center gap-2 group">
+          <button className="text-white/90 hover:text-white transition-colors flex items-center gap-2 group">
             View All Projects <ExternalLink size={18} className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
           </button>
         </div>
@@ -76,25 +76,25 @@ export function Projects() {
                       </div>
                    </div>
                    {/* Placeholder for project image */}
-                   <div className="absolute inset-0 flex items-center justify-center font-outfit text-white/20 text-4xl font-bold tracking-tighter">
+                   <div className="absolute inset-0 flex items-center justify-center font-outfit text-white/90 text-4xl font-bold tracking-tighter">
                       PREVIEW
                    </div>
                 </div>
               </div>
 
               <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
-                <span className="text-sm font-medium text-white/40 mb-4 block">
+                <span className="text-sm font-medium text-white mb-4 block">
                   {project.category}
                 </span>
                 <h3 className="text-4xl md:text-5xl font-bold font-outfit mb-6">
                   {project.title}
                 </h3>
-                <p className="text-xl text-white/60 leading-relaxed mb-8">
+                <p className="text-xl text-white/90 leading-relaxed mb-8">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-3 mb-10">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-sm font-medium text-white/60">
+                    <span key={tag} className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-sm font-medium text-white/90">
                       {tag}
                     </span>
                   ))}

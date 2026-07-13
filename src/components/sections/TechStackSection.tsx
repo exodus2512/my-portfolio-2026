@@ -40,7 +40,7 @@ const TechIcon = ({ src, alt, LucideIcon }: { src?: string; alt: string, LucideI
   }
 
   if (error || !src) {
-    return <Code2 className="w-full h-full text-muted-foreground opacity-50" />;
+    return <Code2 className="w-full h-full text-muted-foreground opacity-90" />;
   }
 
   return (
@@ -147,7 +147,7 @@ const TechCard = ({ tech, index, parentProgress }: { tech: TechItem; index: numb
       <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
         <TechIcon src={tech.icon} alt={tech.name} LucideIcon={tech.lucideIcon} />
       </div>
-      <span className="text-lg md:text-xl font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+      <span className="text-[20px] font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
         {tech.name}
       </span>
     </motion.div>
@@ -167,14 +167,16 @@ const CategoryRow = ({ category }: { category: Category }) => {
   return (
     <div ref={rowRef} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start relative min-h-[180px] py-4">
       {/* Left Side: Domain Title */}
-      <motion.div style={{ opacity: titleOpacity, y: titleY, willChange: "transform" }} className="lg:col-span-4 lg:sticky lg:top-36">
-        <h2 className="text-3xl md:text-4xl lg:text-4xl font-extrabold tracking-tight leading-tight text-foreground">
-          {category.title}
-        </h2>
-      </motion.div>
+      <div className="lg:col-span-5 lg:sticky lg:top-36 h-fit">
+        <motion.div style={{ opacity: titleOpacity, y: titleY, willChange: "transform" }}>
+          <h2 className="text-4xl md:text-5xl lg:text-5xl xl:text-[64px] font-bold tracking-tight leading-tight text-foreground pr-4">
+            {category.title}
+          </h2>
+        </motion.div>
+      </div>
 
       {/* Right Side: Stack Icons Grid */}
-      <div className="lg:col-span-8 flex flex-wrap gap-x-10 gap-y-6 items-center">
+      <div className="lg:col-span-7 flex flex-wrap gap-x-8 md:gap-x-10 gap-y-6 items-center">
         {category.items.map((tech, i) => (
           <TechCard key={tech.name} tech={tech} index={i} parentProgress={scrollYProgress} />
         ))}
@@ -195,8 +197,8 @@ export function TechStackSection() {
         }}
       />
 
-      <div className="relative z-10 flex flex-col gap-32 md:gap-44">
-        <div className="flex items-center gap-2 mb-4">
+      <div className="relative z-10 flex flex-col">
+        <div className="flex items-center gap-2 mb-16 md:mb-24">
           <svg
             width="24"
             height="24"
@@ -213,14 +215,16 @@ export function TechStackSection() {
             <path d="m4.93 4.93 14.14 14.14" />
             <path d="m19.07 4.93-14.14 14.14" />
           </svg>
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#C8A75A]">
+          <span className="text-[12px] font-medium uppercase tracking-[0.3em] text-[#C8A75A]">
             MY STACK
           </span>
         </div>
 
-        {categories.map((category) => (
-          <CategoryRow key={category.id} category={category} />
-        ))}
+        <div className="flex flex-col gap-32 md:gap-44">
+          {categories.map((category) => (
+            <CategoryRow key={category.id} category={category} />
+          ))}
+        </div>
       </div>
     </section>
   );

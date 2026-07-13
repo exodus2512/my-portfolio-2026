@@ -38,14 +38,14 @@ export function Navbar() {
         )}
       >
         <Link href="/" className="text-xl font-bold font-outfit tracking-tighter">
-          PORTFOLIO<span className="text-white/50">.</span>
+          PORTFOLIO<span className="text-white/90">.</span>
         </Link>
         <div className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-white/70 hover:text-white transition-colors"
+              className="text-sm font-medium text-white hover:text-white transition-colors"
             >
               {item.name}
             </Link>
