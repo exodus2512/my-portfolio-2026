@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { IconExternalLink, IconBrandGithub } from "@tabler/icons-react";
-import { BrainCircuit, Cpu, ChevronDown, ArrowRight } from "lucide-react";
+import { BrainCircuit, Cpu, Shield, ChevronDown, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FlowDiagram, type FlowNode } from "@/components/ui/FlowDiagram";
 import { useLenis } from "lenis/react";
@@ -30,6 +30,10 @@ interface ProjectData {
   mockTitle: string;
   mockSub: string;
   mockNavActive: string;
+  mockNavTitle?: string;
+  mockNavItems?: string[];
+  mockButtonPrimary?: string;
+  mockButtonSecondary?: string;
 
   // ── Case Study fields (optional — additive only) ──
   problem?: string;
@@ -57,6 +61,10 @@ const projects: ProjectData[] = [
     mockTitle: "Meet Nephele.",
     mockSub: "An Intelligent Robotic Operating System.",
     mockNavActive: "accent",
+    mockNavTitle: "Nephele",
+    mockNavItems: ["Capabilities", "Intelligence", "Architecture", "Initialize"],
+    mockButtonPrimary: "Initialize Interface",
+    mockButtonSecondary: "View Documentation",
 
     // ── Case Study content (placeholder — TODO: refine copy) ──
     problem:
@@ -84,47 +92,59 @@ const projects: ProjectData[] = [
       "Real-time multi-modal systems need to be designed around the slowest stream, not the fastest. Building the synchronization buffer early saved weeks of debugging later. Also learned that WebSocket reconnection strategy is just as important as the initial connection logic — users will lose connectivity.",
   },
   {
-    category: "CLOUD PLATFORM & ORCHESTRATION",
-    title: "MICRO OPS",
-    subheadline: "Cloud-native microservices orchestration dashboard.",
+    category: "AI SECURITY & REAL-TIME SAAS",
+    title: "SENTINEL AI",
+    subheadline: "AI-powered intelligent surveillance platform for schools, homes, and enterprises.",
     description:
-      "Deploy, monitor, and scale Docker containers on AWS ECS directly from a single glass-morphic UI. Built for high-velocity teams needing rapid provisioning without the AWS console overhead.",
-    tags: ["REACT", "DOCKER", "AWS ECS", "POSTGRESQL", "TERRAFORM"],
-    liveUrl: "https://microps.app",
-    githubUrl: "https://github.com/joshuamoses/microops",
+      "SentinelAI transforms traditional CCTV infrastructure into an intelligent security platform capable of detecting threats, analyzing behavior, and automatically escalating incidents in real time. Built as a scalable multi-tenant SaaS platform with AI-powered monitoring, live streaming, and intelligent notification workflows.",
+    tags: ["NEXT.JS", "FASTAPI", "YOLOv8", "DEEPSORT", "MONGODB", "DOCKER", "OPENAI", "TWILIO", "WEBSOCKETS", "OPENCV"],
+    liveUrl: "https://sentinel-ai-one-lemon.vercel.app/",
+    githubUrl: "https://github.com/joshuamoses/sentinel-ai",
 
     // Mock UI settings
     mockGlow: "bg-accent/15",
-    mockIcon: <Cpu size={80} className="text-accent" />,
-    mockTitle: "Orchestrate.",
-    mockSub: "Deploy and scale microservices with a click.",
+    mockIcon: <Shield size={80} className="text-accent" />,
+    mockTitle: "Sentinel AI.",
+    mockSub: "Intelligent real-time surveillance platform.",
     mockNavActive: "accent",
+    mockNavTitle: "SentinelAI",
+    mockNavItems: ["Live Streams", "Camera Zones", "Incidents", "Monitor"],
+    mockButtonPrimary: "Launch Console",
+    mockButtonSecondary: "View Demo",
 
-    // ── Case Study content (placeholder — TODO: refine copy) ──
+    // ── Case Study content ──
     problem:
-      "Deploying and monitoring containerized services required manual, error-prone steps across multiple AWS console pages and CLI tools. Each environment (dev, staging, prod) had different configurations, leading to frequent misconfiguration and slow iteration cycles.",
+      "Traditional CCTV systems continuously record footage but rely on humans to monitor dozens of camera feeds, leading to delayed responses, missed incidents, and inefficient security operations. Organizations needed an intelligent surveillance platform capable of detecting threats automatically and notifying the right people within seconds.",
     architectureNodes: [
-      { id: "m-dash", label: "Dashboard", tooltip: "React SPA for container management." },
-      { id: "m-api", label: "API Layer", tooltip: "Express.js REST API orchestrating commands." },
-      { id: "m-orch", label: "Orchestrator", tooltip: "Translates UI actions into ECS task definitions." },
-      { id: "m-queue", label: "BullMQ", tooltip: "Async job processing for deployments." },
-      { id: "m-agent", label: "Deploy Agent", tooltip: "Executes Terraform plans and reports status." },
-      { id: "m-db", label: "PostgreSQL", tooltip: "Tracks deployment history and configs." },
+      { id: "s-users", label: "Users", tooltip: "Security personnel interacting with the dashboard." },
+      { id: "s-dash", label: "Next.js Dashboard", tooltip: "Real-time monitoring interface with MJPEG streams." },
+      { id: "s-backend", label: "FastAPI Backend", tooltip: "Async API handling ingestion, state, and WebSocket orchestration." },
+      { id: "s-worker", label: "AI Worker Cluster", tooltip: "Multi-zone Dockerized inference workers executing models." },
+      { id: "s-yolo", label: "YOLOv8 Detection", tooltip: "Object detection model identifying threat objects and people." },
+      { id: "s-deepsort", label: "DeepSORT Tracking", tooltip: "Temporal tracking algorithm maintaining target identity across frames." },
+      { id: "s-behavior", label: "Behavior Engine", tooltip: "Rule-based and heuristic analysis of tracks for anomalies." },
+      { id: "s-db", label: "MongoDB", tooltip: "Flexible schema storage for cameras, tenants, and incident logs." },
+      { id: "s-ws", label: "WebSocket Alerts", tooltip: "Persistent duplex channels for instant dashboard notifications." },
+      { id: "s-notification", label: "OpenAI & Twilio", tooltip: "Generates incident summaries and triggers SMS/voice call alerts." },
     ],
     decisions: [
-      { choice: "Terraform over CloudFormation", reason: "multi-cloud portability and declarative state management with better drift detection" },
-      { choice: "BullMQ", reason: "Redis-backed job queue with built-in retry, backoff, and dead-letter support for async deployments" },
-      { choice: "React + Glassmorphism UI", reason: "real-time status updates via polling with a premium, readable dashboard aesthetic" },
+      { choice: "Multi-Zone AI Workers", reason: "separate AI workers for each surveillance zone allow specialized models to run independently, improving scalability and customization" },
+      { choice: "WebSockets", reason: "persistent WebSocket connections enable instant alert delivery and real-time dashboard synchronization without repeated polling" },
+      { choice: "Docker", reason: "each AI worker runs inside isolated Docker containers, simplifying deployment, scaling, and execution across environments" },
+      { choice: "MongoDB", reason: "document model naturally fits cameras, incidents, tenants, and event metadata while supporting flexible schema evolution" },
+      { choice: "FastAPI", reason: "async-native APIs with automatic OpenAPI documentation and high-performance request handling make it suitable for real-time workloads" },
     ],
     challenges: [
-      { challenge: "Terraform state corruption from concurrent deployments", solution: "Implemented state locking via DynamoDB and serialized deployment queue per environment" },
-      { challenge: "Slow container health check feedback loop (60s+ delays)", solution: "Added optimistic UI updates with rollback on health check failure within configurable window" },
-      { challenge: "Environment config drift between dev and prod", solution: "Centralized config in version-controlled Terraform modules with environment-specific variable files" },
+      { challenge: "Running multiple AI models simultaneously", solution: "Designed a zone-based model registry where each camera is permanently bound to its own AI model, eliminating unnecessary inference and improving scalability." },
+      { challenge: "Preventing alert flooding", solution: "Implemented confidence thresholds, cooldown windows, severity scoring, and intelligent escalation to avoid duplicate notifications." },
+      { challenge: "Managing multiple organizations", solution: "Built a multi-tenant architecture storing users, tenants, cameras, and incidents separately while maintaining isolated monitoring environments." },
+      { challenge: "Integrating live CCTV streams", solution: "Added RTSP stream ingestion with automatic camera registration and MJPEG streaming to the dashboard for real-time monitoring." },
+      { challenge: "Delivering actionable alerts", solution: "Combined OpenAI-generated incident summaries with WhatsApp notifications and automatic phone-call escalation for critical repeated threats." },
     ],
-    // metrics intentionally omitted — will not render the metrics subsection
     lessons:
-      "Infrastructure-as-code is only as good as its testing pipeline. Learned to treat Terraform plans like code reviews — never apply without a diff review. The biggest win was adding a 'dry run' mode to the UI that shows exactly what will change before any deployment executes.",
+      "Building SentinelAI reinforced that scalable AI systems require more than accurate detection models. Separating inference from business logic, designing an event-driven backend, and implementing intelligent escalation workflows significantly improved maintainability, scalability, and real-world usability. The project also highlighted the importance of balancing detection accuracy with operational reliability through cooldowns, confidence scoring, and modular architecture.",
   },
+
 ];
 
 /**
@@ -140,10 +160,10 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
   if (project.problem) {
     sections.push(
       <div key="problem" className="py-16">
-        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted mb-4">
+        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 mb-4">
           Problem
         </h5>
-        <p className="text-base text-secondary leading-relaxed max-w-3xl">
+        <p className="text-base text-white/70 leading-relaxed max-w-3xl">
           {project.problem}
         </p>
       </div>
@@ -153,14 +173,14 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
   if (project.architectureNodes && project.architectureNodes.length > 0) {
     sections.push(
       <div key="architecture" className="py-16 my-4 bg-surface border border-border rounded-2xl px-6 md:px-12">
-        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted mb-6">
+        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 mb-6">
           Architecture
         </h5>
         <div className="py-12 flex justify-center items-center overflow-x-auto w-full">
           <FlowDiagram
             nodes={project.architectureNodes}
             variant="full"
-            className="w-full max-w-full lg:min-w-0"
+            className="w-full min-w-[600px] lg:min-w-0"
           />
         </div>
       </div>
@@ -170,14 +190,14 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
   if (project.decisions && project.decisions.length > 0) {
     sections.push(
       <div key="decisions" className="py-16">
-        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted mb-6">
+        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 mb-6">
           Key Engineering Decisions
         </h5>
         <ul className="space-y-4">
           {project.decisions.map((d, i) => (
             <li key={i} className="text-sm leading-relaxed pl-4 border-l border-border">
-              <span className="text-accent font-semibold">Why {d.choice}:</span>{" "}
-              <span className="text-secondary">{d.reason}</span>
+              <span className="text-[#C8A75A] font-semibold">Why {d.choice}:</span>{" "}
+              <span className="text-white/70">{d.reason}</span>
             </li>
           ))}
         </ul>
@@ -188,7 +208,7 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
   if (project.challenges && project.challenges.length > 0) {
     sections.push(
       <div key="challenges" className="py-16">
-        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted mb-8">
+        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 mb-8">
           Challenges & Solutions
         </h5>
         <div className="space-y-6">
@@ -203,14 +223,11 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
               <div className="hidden md:flex items-center justify-center">
                 <ArrowRight
                   size={20}
-                  className="text-accent shrink-0"
+                  className="text-[#C8A75A] shrink-0"
                   aria-hidden="true"
                 />
               </div>
-              <span className="text-sm text-secondary leading-relaxed pl-3 border-l-2 border-accent/40 md:border-l-0 md:pl-0">
-                <span className="md:hidden font-semibold text-accent text-xs uppercase tracking-wider block mb-1">
-                  Solution
-                </span>
+              <span className="text-sm text-white/70 leading-relaxed">
                 {c.solution}
               </span>
             </div>
@@ -223,7 +240,7 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
   if (project.metrics && project.metrics.length > 0) {
     sections.push(
       <div key="metrics" className="py-16">
-        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted mb-6">
+        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 mb-6">
           Metrics
         </h5>
         <div className="flex flex-wrap gap-8">
@@ -232,7 +249,7 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
               <span className="text-4xl font-bold text-foreground">
                 {m.value}
               </span>
-              <span className="text-xs text-muted mt-1 uppercase tracking-widest">
+              <span className="text-xs text-white/50 mt-1 uppercase tracking-widest">
                 {m.label}
               </span>
             </div>
@@ -245,11 +262,11 @@ function CaseStudyContent({ project }: { project: ProjectData }) {
   if (project.lessons) {
     sections.push(
       <div key="lessons" className="py-16">
-        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted mb-6">
+        <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 mb-6">
           Lessons Learned
         </h5>
-        <div className="border-l-2 border-accent/40 pl-6">
-          <p className="text-lg italic text-secondary leading-relaxed max-w-3xl">
+        <div className="border-l-2 border-[#C8A75A]/40 pl-6">
+          <p className="text-lg italic text-white/70 leading-relaxed max-w-3xl">
             {project.lessons}
           </p>
         </div>
@@ -276,7 +293,7 @@ export function ProjectsSection() {
   const lenis = useLenis();
 
   return (
-    <section id="projects" className="relative w-full py-28 sm:py-40 md:py-60 max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 border-t border-border overflow-hidden">
+    <section id="projects" className="relative w-full py-48 md:py-60 max-w-screen-2xl mx-auto px-8 border-t border-border overflow-hidden">
       {/* Ambient Bottom-Right Glow */}
       <div
         className="absolute bottom-10 right-0 w-[600px] h-[600px] pointer-events-none z-0 rounded-full"
@@ -324,7 +341,7 @@ export function ProjectsSection() {
                 </div>
                 {/* Note: Using a serif font-family explicitly to match the screenshot's premium editorial look */}
                 <h3
-                  className="text-4xl sm:text-[3.5rem] md:text-[6rem] lg:text-[8rem] font-black tracking-tighter text-foreground leading-none break-words"
+                  className="text-[3.5rem] md:text-[6rem] lg:text-[8rem] font-black tracking-tighter text-foreground leading-none"
                   style={{ fontFamily: 'Times New Roman, serif' }}
                 >
                   {project.title}
@@ -332,54 +349,16 @@ export function ProjectsSection() {
               </motion.div>
 
               {/* Browser Frame Preview */}
-              <div className="w-full -mt-6 md:-mt-10 -mb-6 md:-mb-10 pointer-events-none origin-center">
+              <div className="w-full mt-4 mb-16 md:mb-24 origin-center">
                 <ContainerScroll>
-                  {/* Fake Mini Product UI */}
+                  {/* Live Website Iframe UI */}
                   <div className="relative w-full h-full min-h-[460px] sm:min-h-[580px] md:min-h-[700px] lg:min-h-[800px] glass-card rounded-[24px] overflow-hidden flex flex-col font-sans">
-
-                    {/* Top Nav Mock */}
-                    <div className="flex items-center justify-between px-4 sm:px-8 py-4 sm:py-6 border-b border-border bg-background/40 backdrop-blur-md relative z-20">
-                      <div className="flex items-center gap-2">
-                        <span className="font-bold text-foreground text-xl tracking-tight">Nephele</span>
-                      </div>
-                      <div className="hidden md:flex items-center gap-8 text-sm text-muted font-medium">
-                        <span>Capabilities</span>
-                        <span>Intelligence</span>
-                        <span>Architecture</span>
-                        <span className="text-foreground border-b border-foreground pb-1">Initialize</span>
-                      </div>
-                      <div className="px-3 sm:px-5 py-1.5 sm:py-2 bg-foreground text-background font-bold text-xs sm:text-sm shrink-0">
-                        Get Started
-                      </div>
-                    </div>
-
-                    {/* Hero Area Mock */}
-                    <div className="relative flex-1 flex flex-col items-center justify-center p-4 sm:p-8 text-center pt-12 sm:pt-20 pb-20 sm:pb-32">
-                      {/* Radial Glow */}
-                      <div className={cn("absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] blur-[120px] rounded-full opacity-40 mix-blend-screen", project.mockGlow)} />
-
-                      <div className="relative z-10 flex flex-col items-center">
-                        <div className="mb-6 relative">
-                          {project.mockIcon}
-                        </div>
-                        <h3 className="text-4xl sm:text-6xl md:text-8xl font-light tracking-tight text-foreground mb-6">
-                          {project.mockTitle}
-                        </h3>
-                        <p className="text-base sm:text-xl text-secondary max-w-lg mx-auto mb-10">
-                          {project.mockSub}
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-xs sm:max-w-none">
-                          <div className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-foreground/10 backdrop-blur-md text-foreground font-medium text-xs sm:text-sm text-center">
-                            Initialize Interface
-                          </div>
-                          <div className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 border border-border text-secondary font-medium text-xs sm:text-sm text-center hover:text-foreground transition-colors">
-                            View Documentation
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
+                    <iframe
+                      src={project.liveUrl}
+                      className="w-full h-full min-h-[460px] sm:min-h-[580px] md:min-h-[700px] lg:min-h-[800px] border-none"
+                      title={project.title}
+                      loading="lazy"
+                    />
                   </div>
                 </ContainerScroll>
               </div>
@@ -390,14 +369,14 @@ export function ProjectsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start lg:items-end mt-12 max-w-6xl mx-auto w-full"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mt-12 max-w-6xl mx-auto w-full"
               >
                 {/* Left: Text & Tags (8 cols) */}
                 <div className="lg:col-span-8 flex flex-col">
                   <h4 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                     {project.subheadline}
                   </h4>
-                  <p className="text-lg text-secondary leading-relaxed mb-8 max-w-2xl">
+                  <p className="text-lg text-white/70 leading-relaxed mb-8 max-w-2xl">
                     {project.description}
                   </p>
 
@@ -405,7 +384,7 @@ export function ProjectsSection() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest bg-surface border border-border text-secondary"
+                        className="px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest bg-surface border border-border text-white/70"
                       >
                         {tag}
                       </span>
@@ -419,7 +398,7 @@ export function ProjectsSection() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-2 text-sm font-bold tracking-[0.2em] uppercase text-foreground hover:text-accent transition-colors border-b border-foreground hover:border-accent pb-1"
+                    className="group flex items-center gap-2 text-sm font-bold tracking-[0.2em] uppercase text-foreground hover:text-[#C8A75A] transition-colors border-b border-foreground hover:border-[#C8A75A] pb-1"
                   >
                     View Project <IconExternalLink size={16} className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
                   </a>
@@ -430,7 +409,7 @@ export function ProjectsSection() {
                       onClick={() => setExpandedIdx(isExpanded ? null : idx)}
                       aria-expanded={isExpanded}
                       aria-controls={`case-study-${idx}`}
-                      className="group flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent/80 transition-colors cursor-pointer"
+                      className="group flex items-center gap-1.5 text-sm font-medium text-[#C8A75A] hover:text-[#C8A75A]/80 transition-colors cursor-pointer"
                     >
                       <span>{isExpanded ? "Hide Case Study" : "View Case Study"}</span>
                       <ChevronDown

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Geist } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,6 +13,10 @@ export const metadata: Metadata = {
 };
 
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
 
 export default function RootLayout({
   children,
@@ -22,7 +26,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} font-sans dark h-full antialiased`}
+      className={cn("dark", "h-full", "antialiased", inter.variable, "font-sans", geist.variable)}
       style={{ colorScheme: 'dark' }}
     >
       <body className="min-h-full flex flex-col font-sans bg-[#090909]">
